@@ -1,0 +1,50 @@
+{% extends 'centrado.html.twig' %}
+
+{% block body %}
+
+    <body>
+
+        {# app/Resources/views/security/Login.html.twig #}
+        {# ... you will probably extend your base template, like base.html.twig #}
+
+        {% if error %}
+
+            <div class="text-danger">
+                <p>
+                    <strong>
+                        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    </strong>
+                </p>
+            </div>
+
+        {% endif %}
+
+        <form action="{{ path('login') }}" method="post">
+
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control"  />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="_password" class="form-control"  />
+            </div>
+
+            {#
+            
+                if you want to control the URI the user
+                is redirected toon success (more details below)
+                <input type="hidden" name="_target_path" value="/account/" />
+            
+            #}
+
+            <input type="hidden" name="_target_path" value="all_eventos" />
+
+            <button type="submit" class="btn btn-default">Entrar</button>
+
+        </form>        
+
+    </body>    
+
+{% endblock %}

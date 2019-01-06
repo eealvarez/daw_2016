@@ -1,0 +1,20 @@
+{# app/Resources/views/dosColumnas.html.twig. Cuando no se le coloca una ruta en especifico en esta tag de extends, lo que hace es buscar en el directorio predeterminado app/Resources/views/ #}
+
+{#{% extends 'default/dosColumnas.html.twig' %}  ASÍ ES POR SI COLOCAMOS EL ARCHIVO DE LA PLANTILLA BASE dosColumnas.html.twig dentro de la sub carpeta default que se encuentra en esa carpeta views#}
+
+{#{% extends '@Prueba/dosColumnasPruebaBundle.html.twig' %}  EN LA VERSIÓN 3.4.19 DE SYMFONY, ASÍ ES POR SI COLOCAMOS EL ARCHIVO DE LA PLANTILLA BASE dosColumnas.html.twig dentro del directorio src/PruebaBundle/Resources/views/, y en la versión de Symfony 3.4.15 o anterior sería así:
+{% extends 'PruebaBundle::dosColumnasPruebaBundle.html.twig' %} #}
+
+{% extends 'dosColumnas.html.twig' %}
+
+{% block titulo %}Mostrando todos los nombres{% endblock %}
+
+{% block body %}
+    <div>
+        <ul>
+            {% for nombre in nombres if nombre.activo %}
+                <li>{{ nombre.nombre }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

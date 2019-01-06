@@ -1,0 +1,60 @@
+{#Esta fue la primera línea que me creo originalmente Symfony#}
+{#Hello World!#}
+
+{# ASÍ ESTABA INICIALMENTE EL CÓDIGO DE ESTA PLANTILLA:
+eventos
+
+<ul id="eventos">
+    {% for evento in eventos %}
+        <li>{{ evento.nombreEvento }}</li>
+    {% endfor %}
+</ul>
+#}
+
+{#Esta fue la primera línea que me creo originalmente Symfony#}
+{#Hello World!#}
+
+{% extends 'menu.html.twig' %}
+
+{% block body %}
+
+    <table class="table table-boarded tablaGfct">
+        <thead>
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Fecha
+                </th>
+                <th>
+                    Ciudad
+                </th>
+                <th>
+                    Población
+                </th>
+                {#<th>
+                    Categoría
+                </th>#}        
+            </tr>
+        </thead>
+
+            
+                {% for evento in eventos %}                    
+                    <tr>
+                    
+                    <td>{{ evento.id }}</td>
+                    <td>{{ evento.nombreEvento }}</td>
+                    <td>{{ evento.fecha|date('d-m-Y H:i') }}  <!-- filtro de twig para formatear la fecha como la hora --></td>
+                    <td>{{ evento.ciudad }}</td>
+                    <td>{{ evento.poblacion }}</td>
+                    {#<td>{{ evento.categoria }}</td>#}
+                    
+                    </tr>
+                {% endfor %}
+    </table> 
+
+{% endblock %}

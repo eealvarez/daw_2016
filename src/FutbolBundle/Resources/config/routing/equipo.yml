@@ -1,0 +1,24 @@
+equipo_index:
+    path:     /
+    defaults: { _controller: "FutbolBundle:Equipo:index" }
+    methods:  GET
+
+equipo_show:
+    path:     /{id}/show
+    defaults: { _controller: "FutbolBundle:Equipo:show" }
+    methods:  GET
+
+equipo_new:
+    path:     /new
+    defaults: { _controller: "FutbolBundle:Equipo:new" }
+    methods:  [GET, POST]
+
+equipo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FutbolBundle:Equipo:edit" }
+    methods:  [GET, POST]
+
+equipo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FutbolBundle:Equipo:delete" }
+    methods:  DELETE

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{#Hello {{ nombre }} !#}
+
+<img src="{{ asset('img/background-photo-mobile-devices.jpg') }}" alt="" />
+<div class="texto">Estamos en la página de nombres, dentro de PruebaBundle<div>
+        
+<br>
+
+{% if usuario is defined %}
+    {% if nombre == "Paco" %}
+       Paco está habilitado
+    {% elseif nombre == "María" %}
+       Sólo {{ nombre }} habilitada
+    {% else %}
+       {{ nombre }}
+    {% endif %}
+{% endif %}
+
+{% endblock %}
+
+
+{#ASÍ ESTABA ANTES DEL VIDEO DE SYMFONY 3 10 - COMENZANDO CON LAS PLANTILLAS DEL VIDEO DE PACO GÓMEZ #}
+
+{#ASÍ ES COMO ORIGINALMENTE SE IZO EN EL VIDEO DE SYMFONY 3 08 - CRANDO PÁGINAS ESTÁTICAS DEL VIDEO DE PACO GÓMEZ #}
+{#Estamos dentro de la página de nombres#}
+
+{#Hello {{ nombre }}!#}

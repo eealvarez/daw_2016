@@ -1,0 +1,8 @@
+registro:
+    path:     /registro
+    defaults: { _controller: PruebaBundle:Seguridad:registro}
+login:
+    path:     /login
+    defaults: { _controller: PruebaBundle:Seguridad:login}
+logout:
+    path:     /logout

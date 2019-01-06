@@ -1,0 +1,11 @@
+futbol_equipo:
+    resource: "@FutbolBundle/Resources/config/routing/equipo.yml"
+    prefix:   /equipo
+    
+futbol_entrenador:
+    resource: "@FutbolBundle/Resources/config/routing/entrenador.yml"
+    prefix:   /entrenador
+
+futbol_homepage:
+    path:     /fut
+    defaults: { _controller: FutbolBundle:Default:index }

@@ -1,0 +1,24 @@
+categorias_index:
+    path:     /
+    defaults: { _controller: "PruebaBundle:Categorias:index" }
+    methods:  GET
+
+categorias_show:
+    path:     /{id}/show
+    defaults: { _controller: "PruebaBundle:Categorias:show" }
+    methods:  GET
+
+categorias_new:
+    path:     /new
+    defaults: { _controller: "PruebaBundle:Categorias:new" }
+    methods:  [GET, POST]
+
+categorias_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PruebaBundle:Categorias:edit" }
+    methods:  [GET, POST]
+
+categorias_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PruebaBundle:Categorias:delete" }
+    methods:  DELETE

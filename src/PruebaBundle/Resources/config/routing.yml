@@ -1,0 +1,94 @@
+prueba_categorias:
+    resource: "@PruebaBundle/Resources/config/routing/categorias.yml"
+    prefix:   /categorias
+
+
+#contactar en esta línea hace refencia a la acción contactar definida en el DefaultController.php:
+    #defaults: { _controller: PruebaBundle:Default:contactar, lugar:'vlc' } 
+#y lugar:'vlc'', es que estamos predeterminando a la variable lugar que de una vez sea vlc
+prueba_contactar:
+    path:     /contactar/{lugar}
+    defaults: { _controller: PruebaBundle:Default:contactar, lugar:'vlc' }
+    
+prueba_contactar_vlc:
+    path:     /contactarVlc
+    defaults: { _controller: PruebaBundle:Default:contactarVlc }
+
+prueba_homepage:
+    path:     /
+    defaults: { _controller: PruebaBundle:Default:index }
+    
+prueba_tag_for:
+    path:     /nombres
+    defaults: { _controller: PruebaBundle:Default:nombres }
+    
+security_login:
+    path:     /login
+    defaults: { _controller: PruebaBundle:Security:login }
+
+#ASÍ ES COMO ORIGINALMENTE SE IZO EN EL VIDEO DE SYMFONY 3 08 - CRANDO PÁGINAS ESTÁTICAS DEL VIDEO DE PACO GÓMEZ 
+#prueba_nombre:
+    #path:     /nombre
+    #defaults: { _controller: PruebaBundle:Default:nombre }
+    
+#ASÍ ESTABA INICIALMENTE ESTA RUTA
+#prueba_nombre:
+    #path:     /nombre/{nombre}
+    #defaults: { _controller: PruebaBundle:Default:nombre }
+    
+prueba_nombre:
+    path:     /{_locale}/nombre/{nombre}
+    defaults: { _controller: PruebaBundle:Default:nombre, _locale:es }
+    requirements:
+        _locale:  en|es
+    
+prueba_nombreR:
+    path:     /nombreR/{nombre}
+    defaults: { _controller: PruebaBundle:Default:nombreR }
+    
+all_eventos:
+    path:     /eventos/all
+    defaults: { _controller: PruebaBundle:Eventos:all }
+    
+    #PruebaBundle:Eventos:crearEvento , Nombre del bundle: PruebaBundle, nombre del controlador: Eventos, nombre de la acción en ese controller: crearEvento
+eventos_crear:
+    path:     /eventos/crear
+    defaults: { _controller: PruebaBundle:Eventos:crearEvento }
+    
+    #COMENTARÍO ESTAS DOS SIGUIENTES RUTAS PORQUE EN LA DIRECCIÓN DE LA RUTA AMBAS REQUIEREN EL INGRESO DE UN PARÁMETRO QUE INTERFIERE CON LA DIRECCIÓN DE LA RUTA nuevo_eventos POR EJEMPLO, que seguido de eventos/va otro nivel de ruta que es nuevo, es decir, /eventos/nuevo
+    
+    #, id:1, esto es el valor que va a tener por defecto el parámetro id, por si por ejemplo solo ingresamos a la dirección: http://localhost:8000/prueba/eventos, sin colocarle un número de id como parámetro como pide
+#eventos_buscar:
+    #path:     /eventos/{id}
+    #defaults: { _controller: PruebaBundle:Eventos:buscarEvento, id:1 }
+    
+#eventosPorNombre_buscar:
+    #path:     /eventosPorNombre/{nombre}
+    #defaults: { _controller: PruebaBundle:Eventos:buscarEventoPorNombre, nombre:'evento ear' }
+    
+nuevo_eventos:
+    path:     /eventos/nuevo
+    defaults: { _controller: PruebaBundle:Eventos:nuevo }
+    
+exito_eventos:
+    path:     /eventos/msgExito
+    defaults: { _controller: PruebaBundle:Eventos:msgExito }
+    
+nuevo_eventos_Cat:
+    path:     /eventos/nuevoConCat
+    defaults: { _controller: PruebaBundle:Eventos:nuevoConCat }
+    
+eventos_buscar:
+    path:     /eventos/{id}
+    defaults: { _controller: PruebaBundle:Eventos:buscarEvento, id:1 }
+    methods:  [GET]
+    
+api_eventos:
+    path:     /api/eventos/{nombre}
+    defaults: { _controller: PruebaBundle:Api:evento, nombre:'Sin definir' }
+    methods:  [GET]
+    
+api_eventos_crear:
+    path:     /api/eventos
+    defaults: { _controller: PruebaBundle:Api:crearEvento }
+    methods:  [POST]

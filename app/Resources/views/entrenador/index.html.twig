@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Entrenadors list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entrenador in entrenadors %}
+            <tr>
+                <td><a href="{{ path('entrenador_show', { 'id': entrenador.id }) }}">{{ entrenador.id }}</a></td>
+                <td>{{ entrenador.nombre }}</td>
+                <td>{{ entrenador.apellidos }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('entrenador_show', { 'id': entrenador.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('entrenador_edit', { 'id': entrenador.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('entrenador_new') }}">Create a new entrenador</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+futbol:
+    resource: "@FutbolBundle/Resources/config/routing.yml"
+    prefix:   /
+
+prueba:
+    resource: "@PruebaBundle/Resources/config/routing.yml"
+    prefix:   /prueba
+    
+categorias:
+    resource: "@PruebaBundle/Resources/config/routing/categorias.yml"
+    prefix:   /categorias
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+    
+otra_prueba:
+    resource: "@OtraPruebaBundle/Controller/"
+    type:     annotation
+    prefix:   /otraprueba
+    
+gfct_security:
+    resource: "@PruebaBundle/Resources/config/routing_security.yml"
+    prefix: /
